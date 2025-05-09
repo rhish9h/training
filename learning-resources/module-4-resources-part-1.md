@@ -49,14 +49,14 @@
 #### Recommended Resources
 
 **Official Documentation**
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
-- [Kafka Python Client](https://kafka-python.readthedocs.io/)
-- [Confluent Kafka Python](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html)
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) – Official documentation for Apache Kafka, including setup, configuration, and API references.
+- [kafka-python Documentation](https://kafka-python.readthedocs.io/en/master/) – Python client for Apache Kafka, with guides and API docs.
+- [Confluent Kafka Python Overview](https://docs.confluent.io/kafka-clients/python/current/overview.html) – Official Confluent Python client documentation, including usage examples and API reference.
 
 **Articles & Tutorials**
-- [Kafka: The Definitive Guide (Confluent)](https://www.confluent.io/resources/kafka-the-definitive-guide/)
-- [Kafka Core Concepts (IBM)](https://developer.ibm.com/articles/event-streams-kafka-core-concepts/)
-- [Introduction to Apache Kafka (Baeldung)](https://www.baeldung.com/kafka-introduction)
+- [Kafka: The Definitive Guide (Confluent)](https://www.confluent.io/resources/ebook/kafka-the-definitive-guide/) – Free ebook covering Kafka fundamentals, architecture, and practical usage.
+- [Kafka Core Concepts (IBM)](https://developer.ibm.com/components/kafka/) – IBM's Kafka learning resources and core concepts overview.
+- [Introduction to Apache Kafka (Baeldung)](https://www.baeldung.com/apache-kafka) – Baeldung's guide to Apache Kafka basics and getting started.
 
 **YouTube Videos**
 - [Kafka Fundamentals (Confluent)](https://www.youtube.com/watch?v=B5j3uNBH8X4)
@@ -117,14 +117,14 @@
 #### Recommended Resources
 
 **Official Documentation**
-- [Kafka Docker Setup](https://docs.confluent.io/platform/current/installation/docker/installation.html)
-- [Kafka Configuration](https://kafka.apache.org/documentation/#configuration)
-- [ZooKeeper Configuration](https://zookeeper.apache.org/doc/current/zookeeperAdmin.html)
+- [Kafka Docker Setup (Confluent Docs)](https://docs.confluent.io/platform/current/installation/docker/installation.html) – Official guide for installing Confluent Platform (Kafka) using Docker.
+- [Kafka Configuration (Apache Docs)](https://kafka.apache.org/documentation/#configuration) – Official Apache Kafka configuration reference.
+- [ZooKeeper Configuration (Apache Docs)](https://zookeeper.apache.org/doc/current/zookeeperAdmin.html) – Official ZooKeeper administrator's configuration guide.
 
 **Articles & Tutorials**
-- [Kafka Docker Compose Setup Guide](https://www.baeldung.com/ops/kafka-docker-setup)
-- [Running Kafka in Docker](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/)
-- [Setting Up Multi-Node Kafka Cluster](https://medium.com/@TimvanBaarsen/apache-kafka-cli-commands-cheat-sheet-a6f06eac01ff)
+- [Kafka Docker Compose Setup Guide (Baeldung)](https://www.baeldung.com/ops/kafka-docker-setup) – Step-by-step tutorial for setting up Kafka with Docker Compose.
+- [How to Run Kafka Locally with Docker (Confluent Developer)](https://developer.confluent.io/confluent-tutorials/kafka-on-docker/) – Tutorial for running Kafka on Docker locally.
+- [Deploy a Kafka Multi-Node Cluster with Docker (Medium)](https://medium.com/@PierreKieffer/deploy-a-kafka-multi-node-cluster-with-docker-72878ddbaf96) – Guide to deploying a multi-node Kafka cluster using Docker.
 
 **YouTube Videos**
 - [Kafka with Docker (Confluent)](https://www.youtube.com/watch?v=qepFNPhrL08)
@@ -185,14 +185,14 @@
 #### Recommended Resources
 
 **Official Documentation**
-- [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html)
-- [JSON Schema Specification](https://json-schema.org/specification.html)
-- [Confluent Python Client](https://docs.confluent.io/kafka-clients/python/current/overview.html)
+- [Confluent Schema Registry Documentation](https://docs.confluent.io/platform/current/schema-registry/index.html) – Official documentation for Confluent Schema Registry.
+- [JSON Schema Specification](https://json-schema.org/specification) – Official JSON Schema specification.
+- [Confluent Python Client Overview](https://docs.confluent.io/kafka-clients/python/current/overview.html) – Official documentation for the Confluent Python client for Kafka.
 
 **Articles & Tutorials**
-- [Schema Evolution in Kafka](https://www.confluent.io/blog/schemas-contracts-compatibility/)
-- [JSON Schema Validation with Kafka](https://medium.com/nerd-for-tech/kafka-schema-registry-with-python-ab99f2871b56)
-- [Managing Schemas in Event-Driven Systems](https://www.redhat.com/architect/event-driven-schema-management)
+- [Schema Evolution and Compatibility (Confluent Docs)](https://docs.confluent.io/platform/current/schema-registry/fundamentals/schema-evolution.html) – In-depth guide to schema evolution and compatibility in Kafka.
+- [Stream Processing with Python: Kafka Producer-Consumer with Schema Registry (Medium)](https://medium.com/@irem.ertuerk/stream-processing-with-python-part-2-kafka-producer-consumer-with-avro-schema-and-schema-registry-9b43a1334fa) – Tutorial on using Kafka Schema Registry with Python.
+- [Event-driven APIs and Schema Governance for Apache Kafka (Red Hat)](https://developers.redhat.com/blog/2021/05/04/event-driven-apis-and-schema-governance-for-apache-kafka-get-ready-for-kafka-summit-europe-2021) – Overview of schema management in event-driven architectures.
 
 **YouTube Videos**
 - [Schema Registry Overview (Confluent)](https://www.youtube.com/watch?v=_x9RacHDQY0)
@@ -250,12 +250,8 @@
    - Create dashboards
    - Design alerting strategy
 
-#### Recommended Resources
-
-**Official Documentation**
-- [Kafka Producer API](https://kafka.apache.org/documentation/#producerapi)
-- [Kafka Admin API](https://kafka.apache.org/documentation/#adminapi)
-- [Confluent Schema Registry REST API](https://docs.confluent.io/platform/current/schema-registry/develop/api.html)
+- [Kafka Admin API (Apache Docs)](https://kafka.apache.org/documentation/#adminapi) – Official reference for the Kafka Admin API.
+- [Confluent Schema Registry REST API Docs](https://docs.confluent.io/platform/current/schema-registry/develop/api.html) – REST API reference for Confluent Schema Registry.
 
 **Articles & Tutorials**
 - [Building a Weather Data Pipeline](https://medium.com/swlh/building-a-real-time-weather-data-pipeline-with-apache-kafka-c0ea58d8cc5e)
