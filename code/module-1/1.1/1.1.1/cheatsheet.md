@@ -3,8 +3,10 @@
 This cheatsheet covers all the typing concepts you'll need for this micro project, from basic annotations to advanced features like Protocols and variance.
 
 ## Basic Type Annotations
+*Annotations for simple data types and function signatures*
 
 ### Variable Annotations
+*Adding type hints to variables and class attributes*
 ```python
 # Basic types
 name: str = "John"
@@ -17,6 +19,7 @@ user_id: int  # Declare type without initialization
 ```
 
 ### Function Annotations
+*Type hints for function parameters and return values*
 ```python
 def greet(name: str) -> str:
     return f"Hello, {name}!"
@@ -26,8 +29,10 @@ def multiply(a: int, b: int) -> int:
 ```
 
 ## Collection Types
+*Type hints for lists, dictionaries, sets, and tuples*
 
 ### Lists
+*Type hints for ordered, mutable sequences*
 ```python
 from typing import List
 
@@ -42,6 +47,7 @@ empty_names: List[str] = []
 ```
 
 ### Dictionaries
+*Type hints for key-value mappings*
 ```python
 from typing import Dict
 
@@ -53,6 +59,7 @@ values: Dict[str, Any] = {"name": "Alice", "age": 30, "active": True}
 ```
 
 ### Sets and Tuples
+*Type hints for unique collections and fixed-length sequences*
 ```python
 from typing import Set, Tuple
 
@@ -68,6 +75,7 @@ numbers: Tuple[int, ...] = (1, 2, 3, 4, 5)
 ```
 
 ## Optional and Union Types
+*Handling values that can be of multiple types or None*
 
 ```python
 from typing import Optional, Union
@@ -86,6 +94,7 @@ def process_data(data: Union[str, bytes, List[int]]) -> None:
 ```
 
 ## Callable Types
+*Type hints for functions and callable objects*
 
 ```python
 from typing import Callable
@@ -102,6 +111,7 @@ def apply_twice(func: Callable[[int], int], value: int) -> int:
 ```
 
 ## Type Aliases
+*Creating custom names for complex types*
 
 ```python
 from typing import Dict, List
@@ -118,6 +128,7 @@ def get_user(user_id: UserId) -> UserData:
 ```
 
 ## Generics with TypeVar
+*Creating reusable, type-safe functions and classes*
 
 ```python
 from typing import TypeVar, List, Callable
@@ -137,6 +148,7 @@ def add(a: Number, b: Number) -> Number:
 ```
 
 ## Protocols
+*Structural subtyping (duck typing) with static type checking*
 
 ```python
 from typing import Protocol, List
@@ -188,6 +200,7 @@ class Consumer(Generic[T_contra]):
 ```
 
 ### Variance Example
+*Practical demonstration of covariance with a Box container*
 
 ```python
 from typing import TypeVar, Generic, List
@@ -211,6 +224,7 @@ animal_box: Box[Animal] = dog_box  # OK with covariance
 ```
 
 ## Any and Final Types
+*Special types for dynamic typing and preventing subclassing*
 
 ```python
 from typing import Any, Final
