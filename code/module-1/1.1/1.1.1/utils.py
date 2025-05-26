@@ -13,24 +13,27 @@ TODO:
 """
 
 # Import the relevant typing modules when you start refactoring
+from typing import List, Callable, TypeVar, Dict, Union, Optional, Any, Set
 
+T = TypeVar("T")
 
-def join_strings(items, separator=" "):
+def join_strings(items: List[Union[str, int]], separator: str=" ") -> str:
     """Join a list of items into a single string with the given separator."""
     return separator.join(str(item) for item in items)
 
 
-def filter_items(items, predicate):
+def filter_items(items: List[T], predicate: Callable[[T], bool]) -> List[T]:
     """Filter items based on a predicate function."""
     return [item for item in items if predicate(item)]
 
 
-def transform_values(data, transformer):
+IntOrStr = TypeVar("IntOrStr", int, str)
+def transform_values(data: Dict[str, IntOrStr], transformer: Callable[[IntOrStr], IntOrStr]) -> Dict[str, IntOrStr]:
     """Apply a transformer function to all values in a dictionary."""
     return {key: transformer(value) for key, value in data.items()}
 
 
-def find_first(items, predicate):
+def find_first(items: List[IntOrStr], predicate: Callable[[IntOrStr], bool]) -> Optional[IntOrStr]:
     """Find the first item that matches the predicate."""
     for item in items:
         if predicate(item):
@@ -38,9 +41,9 @@ def find_first(items, predicate):
     return None
 
 
-def group_by(items, key_func):
+def group_by(items: List[T], key_func: Callable[[T], IntOrStr]) -> Dict[IntOrStr, List[T]]:
     """Group items by a key function."""
-    result = {}
+    result: Dict[IntOrStr, List[T]] = {}
     for item in items:
         key = key_func(item)
         if key not in result:
@@ -49,7 +52,7 @@ def group_by(items, key_func):
     return result
 
 
-def safe_get(data, keys, default=None):
+def safe_get(data: Optional[Dict[IntOrStr, Any]], keys: List[IntOrStr], default: Optional[IntOrStr]=None) -> Optional[IntOrStr]:
     """Safely get a nested value from a dictionary."""
     current = data
     for key in keys:
@@ -57,13 +60,13 @@ def safe_get(data, keys, default=None):
             current = current[key]
         else:
             return default
-    return current
+    return current if isinstance(current, (int, str)) else default
 
 
-def deduplicate(items):
+def deduplicate(items: List[T]) -> List[T]:
     """Remove duplicates while preserving order."""
-    seen = set()
-    result = []
+    seen: Set[T] = set()
+    result: List[T] = []
     for item in items:
         if item not in seen:
             seen.add(item)
