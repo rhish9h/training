@@ -19,12 +19,12 @@ T = TypeVar("T")
 
 class Stringable(Protocol):
     def __str__(self) -> str:
-        return str(self)
+        ...
 
 def join_strings(items: List[Stringable], separator: str=" ") -> str:
     """Join a list of items into a single string with the given separator."""
     return separator.join(str(item) for item in items)
-    
+
 
 def filter_items(items: List[T], predicate: Callable[[T], bool]) -> List[T]:
     """Filter items based on a predicate function."""
