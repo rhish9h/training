@@ -7,7 +7,7 @@ _Estimated: 6-8 weeks_
 
 ### Module 1: Core Python & Async Foundations
 - [ ] **1.1 Modern Python Typing**
-  - [ ] 1.1.1 MyPy + Type Hints (3h)
+  - [✅] 1.1.1 MyPy + Type Hints (3h)
   - [ ] 1.1.2 Dataclasses vs. Pydantic v2 (3h)
   - [ ] 1.1.3 Pattern Matching (3h)
   - [ ] Branch Project 1.1: Type-Safe FastAPI Stub
