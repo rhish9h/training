@@ -13,14 +13,18 @@ TODO:
 """
 
 # Import the relevant typing modules when you start refactoring
-from typing import List, Callable, TypeVar, Dict, Union, Optional, Any, Set
+from typing import List, Callable, Sequence, TypeVar, Dict, Union, Optional, Any, Set, Protocol, Generic
 
 T = TypeVar("T")
 
-def join_strings(items: List[Union[str, int]], separator: str=" ") -> str:
+class Stringable(Protocol):
+    def __str__(self) -> str:
+        return str(self)
+
+def join_strings(items: List[Stringable], separator: str=" ") -> str:
     """Join a list of items into a single string with the given separator."""
     return separator.join(str(item) for item in items)
-
+    
 
 def filter_items(items: List[T], predicate: Callable[[T], bool]) -> List[T]:
     """Filter items based on a predicate function."""
@@ -32,13 +36,19 @@ def transform_values(data: Dict[str, IntOrStr], transformer: Callable[[IntOrStr]
     """Apply a transformer function to all values in a dictionary."""
     return {key: transformer(value) for key, value in data.items()}
 
+T_co = TypeVar("T_co", covariant=True)
+
+class FirstFinder(Generic[T_co]):
+    def find_first(self, items: Sequence[T_co], predicate: Callable[[T_co], bool]) -> Optional[T_co]:
+        for item in items:
+            if predicate(item):
+                return item
+        return None
 
 def find_first(items: List[IntOrStr], predicate: Callable[[IntOrStr], bool]) -> Optional[IntOrStr]:
     """Find the first item that matches the predicate."""
-    for item in items:
-        if predicate(item):
-            return item
-    return None
+    first_finder: FirstFinder[IntOrStr] = FirstFinder()
+    return first_finder.find_first(items, predicate)
 
 
 def group_by(items: List[T], key_func: Callable[[T], IntOrStr]) -> Dict[IntOrStr, List[T]]:
