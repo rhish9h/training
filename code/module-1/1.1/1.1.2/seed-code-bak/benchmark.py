@@ -32,53 +32,56 @@ except ImportError:
 
 @dataclass
 class AddressDataclass:
-    """Address information using standard dataclass."""
-    street: str
-    city: str
-    zip_code: str
-    country: str
-    is_primary: bool = False
+    """Student Task: define address fields.
+
+    Required fields:
+        street: str
+        city: str
+        zip_code: str
+        country: str
+        is_primary: bool (default False)
+    """
+    # TODO: add the fields above with proper type hints
+    ...
 
 @dataclass
 class PersonDataclass:
-    """Person information using standard dataclass."""
-    name: str
-    age: int
-    email: str
-    addresses: List[AddressDataclass] = field(default_factory=list)
-    metadata: Dict[str, Any] = field(default_factory=dict)
-    created_at: Optional[datetime] = None
-    
+    """Student Task: define person fields & methods.
+
+    Required fields:
+        name: str
+        age: int
+        email: str
+        addresses: list[AddressDataclass]
+        metadata: dict[str, Any]
+        created_at: datetime | None
+    """
+    # TODO: add the fields above with proper type hints
+    ...
+
     def to_json(self) -> str:
-        """Convert to JSON string."""
+        """Convert to JSON string (Student Task)."""
         # TODO: Implement custom JSON serialization for dataclass
-        pass
-    
+        raise NotImplementedError
+
     @classmethod
     def from_json(cls, json_str: str) -> 'PersonDataclass':
-        """Create instance from JSON string."""
+        """Create instance from JSON string (Student Task)."""
         # TODO: Implement custom JSON deserialization for dataclass
-        pass
+        raise NotImplementedError
 
 
 # ---- Pydantic Implementation ----
 
 class AddressPydantic(BaseModel):
-    """Address information using Pydantic model."""
-    street: str
-    city: str
-    zip_code: str
-    country: str
-    is_primary: bool = False
+    """Student Task: replicate AddressDataclass in Pydantic with validation."""
+    # TODO: define fields with optional validation (e.g., min_length)
+    ...
 
 class PersonPydantic(BaseModel):
-    """Person information using Pydantic model."""
-    name: str
-    age: int
-    email: str
-    addresses: List[AddressPydantic] = []
-    metadata: Dict[str, Any] = {}
-    created_at: Optional[datetime] = None
+    """Student Task: define person model fields & validators."""
+    # TODO: replicate PersonDataclass fields with validation
+    ...
 
 
 # ---- Benchmarking Functions ----
